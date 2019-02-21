@@ -3,9 +3,11 @@ package com.contactsunny.poc.SimpleKafkaProducer;
 import com.contactsunny.poc.SimpleKafkaProducer.kafkaConsumers.SimpleKafkaConsumer;
 import org.apache.kafka.clients.producer.KafkaProducer;
 import org.apache.kafka.clients.producer.ProducerRecord;
-import org.apache.log4j.Logger;
+//import org.apache.log4j.Logger;
 import org.codehaus.jettison.json.JSONException;
 import org.codehaus.jettison.json.JSONObject;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
@@ -28,7 +30,7 @@ public class SimpleKafkaProducerApplication implements CommandLineRunner {
     @Value("${zookeeper.host}")
     String zookeeperHost;
 
-    private static final Logger logger = Logger.getLogger(SimpleKafkaProducerApplication.class);
+   public static Logger logger = LoggerFactory.getLogger(SimpleKafkaProducerApplication.class);
 
     public static void main( String[] args ) {
         SpringApplication.run(SimpleKafkaProducerApplication.class, args);
